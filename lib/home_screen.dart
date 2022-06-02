@@ -14,6 +14,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  bool isFootballVisible = true;
+  bool isMusicVisible = true;
+  bool isMedicineVisible = true;
+  bool isAgricultureVisible = true;
+  bool isSportVisible = true;
+  bool isBreakfastVisible = true;
+  bool isTravelVisible = true;
+  bool isExportationVisible = true;
+  bool isSleepVisible = true;
+  int isSelected = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,89 +64,127 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             const SizedBox(height: 20),
-            Column(
+            Wrap(
+              runSpacing: 10,
               children: [
-                Row(
-                  children: [
-                    SelectInterest(
-                        text: 'Football',
-                        onClick: () {},
-                        btnHeight: 50,
-                        borderRadius: 8,
-                        btnWidth: 100),
-                    const SizedBox(width: 8),
-                    SelectInterest(
-                        text: 'Music',
-                        onClick: () {},
-                        btnHeight: 50,
-                        borderRadius: 8,
-                        btnWidth: 80),
-                    const SizedBox(width: 8),
-                    SelectInterest(
-                        text: 'Medicine',
-                        onClick: () {},
-                        btnHeight: 50,
-                        borderRadius: 8,
-                        btnWidth: 150),
-                  ],
+                SelectInterest(
+                  text: 'Football',
+                  onClick: () {
+                    setState(() {
+                      isFootballVisible = !isFootballVisible;
+                    });
+                  },
+                  btnHeight: 50,
+                  borderRadius: 8,
+                  btnWidth: 100,
+                  visibility: isFootballVisible,
+                ),
+                const SizedBox(width: 8),
+                SelectInterest(
+                  text: 'Music',
+                  onClick: () {
+                    setState(() {
+                      isMusicVisible = !isMusicVisible;
+                    });
+                  },
+                  btnHeight: 50,
+                  borderRadius: 8,
+                  btnWidth: 80,
+                  visibility: isMusicVisible,
+                ),
+                const SizedBox(width: 8),
+                SelectInterest(
+                  text: 'Medicine',
+                  onClick: () {
+                    setState(() {
+                      isMedicineVisible = !isMedicineVisible;
+                    });
+                  },
+                  btnHeight: 50,
+                  borderRadius: 8,
+                  btnWidth: 150,
+                  visibility: isMedicineVisible,
                 ),
                 const SizedBox(
                   height: 10,
                 ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: SelectInterest(
-                          text: 'Agriculture',
-                          onClick: () {},
-                          btnHeight: 50,
-                          borderRadius: 8,
-                          btnWidth: 100),
-                    ),
-                    const SizedBox(width: 8),
-                    SelectInterest(
-                        text: 'Sports',
-                        onClick: () {},
-                        btnHeight: 50,
-                        borderRadius: 8,
-                        btnWidth: 100),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: SelectInterest(
-                        text: 'Breakfast',
-                        onClick: () {},
-                        btnHeight: 50,
-                        borderRadius: 8,
-                      ),
-                    ),
-                  ],
+                SelectInterest(
+                  text: 'Agriculture',
+                  onClick: () {
+                    setState(() {
+                      isAgricultureVisible = !isAgricultureVisible;
+                    });
+                  },
+                  btnHeight: 50,
+                  borderRadius: 8,
+                  btnWidth: 120,
+                  visibility: isAgricultureVisible,
+                ),
+                const SizedBox(width: 8),
+                SelectInterest(
+                  text: 'Sports',
+                  onClick: () {
+                    setState(() {
+                      isSportVisible = !isSportVisible;
+                    });
+                  },
+                  btnHeight: 50,
+                  borderRadius: 8,
+                  btnWidth: 100,
+                  visibility: isSportVisible,
+                ),
+                const SizedBox(width: 8),
+                SelectInterest(
+                  text: 'Breakfast',
+                  onClick: () {
+                    setState(() {
+                      isBreakfastVisible = !isBreakfastVisible;
+                    });
+                  },
+                  btnHeight: 50,
+                  borderRadius: 8,
+                  visibility: isBreakfastVisible,
                 ),
                 const SizedBox(
                   height: 10,
                 ),
-                Row(
-                  children: [
-                    SelectInterest(
-                        text: 'Music',
-                        onClick: () {},
-                        btnHeight: 50,
-                        borderRadius: 8,
-                        btnWidth: 80),
-                    const SizedBox(width: 10),
-                    SelectInterest(
-                        text: 'Travel',
-                        onClick: () {},
-                        btnHeight: 50,
-                        borderRadius: 8,
-                        btnWidth: 80),
-                    const SizedBox(width: 8),
-                    SelectInterest(
-                        text: 'Exportation',
-                        onClick: () {},
-                        btnHeight: 50,
-                        borderRadius: 8,
-                        btnWidth: 160),
-                  ],
+                SelectInterest(
+                  text: 'Sleep',
+                  onClick: () {
+                    setState(() {
+                      isSleepVisible = !isSleepVisible;
+                    });
+                  },
+                  btnHeight: 50,
+                  borderRadius: 8,
+                  btnWidth: 80,
+                  visibility: isSleepVisible,
+                ),
+                const SizedBox(width: 10),
+                SelectInterest(
+                  text: 'Travel',
+                  onClick: () {
+                    setState(() {
+                      isTravelVisible = !isTravelVisible;
+                    });
+                  },
+                  btnHeight: 50,
+                  borderRadius: 8,
+                  btnWidth: 80,
+                  visibility: isTravelVisible,
+                ),
+                const SizedBox(width: 8),
+                SelectInterest(
+                  text: 'Exportation',
+                  onClick: () {
+                    setState(() {
+                      isExportationVisible = !isExportationVisible;
+                    });
+                  },
+                  btnHeight: 50,
+                  borderRadius: 8,
+                  btnWidth: 160,
+                  visibility: isExportationVisible,
                 ),
               ],
             ),
@@ -145,21 +193,163 @@ class _MyHomePageState extends State<MyHomePage> {
               text: 'Selected',
               fontWeight: FontWeight.w700,
             ),
+            const SizedBox(height: 5),
+            Wrap(
+              runSpacing: 10,
+              children: [
+                SelectInterest(
+                  borderColor: Colors.indigo,
+                  text: 'Football',
+                  textColor: Colors.indigo,
+                  onClick: () {
+                    setState(() {
+                      isFootballVisible = !isFootballVisible;
+                    });
+                  },
+                  btnHeight: 50,
+                  borderRadius: 8,
+                  btnWidth: 100,
+                  visibility: !isFootballVisible,
+                ),
+                const SizedBox(width: 8),
+                SelectInterest(
+                  borderColor: Colors.indigo,
+                  text: 'Music',
+                  textColor: Colors.indigo,
+                  onClick: () {
+                    setState(() {
+                      isMusicVisible = !isMusicVisible;
+                    });
+                  },
+                  btnHeight: 50,
+                  borderRadius: 8,
+                  btnWidth: 80,
+                  visibility: !isMusicVisible,
+                ),
+                const SizedBox(width: 8),
+                SelectInterest(
+                  borderColor: Colors.indigo,
+                  text: 'Medicine',
+                  textColor: Colors.indigo,
+                  onClick: () {
+                    setState(() {
+                      isMedicineVisible = !isMedicineVisible;
+                    });
+                  },
+                  btnHeight: 50,
+                  borderRadius: 8,
+                  btnWidth: 150,
+                  visibility: !isMedicineVisible,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                SelectInterest(
+                  borderColor: Colors.indigo,
+                  text: 'Agriculture',
+                  textColor: Colors.indigo,
+                  onClick: () {
+                    setState(() {
+                      isAgricultureVisible = !isAgricultureVisible;
+                    });
+                  },
+                  btnHeight: 50,
+                  borderRadius: 8,
+                  btnWidth: 120,
+                  visibility: !isAgricultureVisible,
+                ),
+                const SizedBox(width: 8),
+                SelectInterest(
+                  borderColor: Colors.indigo,
+                  text: 'Sports',
+                  textColor: Colors.indigo,
+                  onClick: () {
+                    setState(() {
+                      isSportVisible = !isSportVisible;
+                    });
+                  },
+                  btnHeight: 50,
+                  borderRadius: 8,
+                  btnWidth: 100,
+                  visibility: !isSportVisible,
+                ),
+                const SizedBox(width: 8),
+                SelectInterest(
+                  borderColor: Colors.indigo,
+                  text: 'Breakfast',
+                  textColor: Colors.indigo,
+                  onClick: () {
+                    setState(() {
+                      isBreakfastVisible = !isBreakfastVisible;
+                    });
+                  },
+                  btnHeight: 50,
+                  borderRadius: 8,
+                  visibility: !isBreakfastVisible,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                SelectInterest(
+                  borderColor: Colors.indigo,
+                  text: 'Sleep',
+                  textColor: Colors.indigo,
+                  onClick: () {
+                    setState(() {
+                      isSleepVisible = !isSleepVisible;
+                    });
+                  },
+                  btnHeight: 50,
+                  borderRadius: 8,
+                  btnWidth: 80,
+                  visibility: !isSleepVisible,
+                ),
+                const SizedBox(width: 10),
+                SelectInterest(
+                  borderColor: Colors.indigo,
+                  text: 'Travel',
+                  textColor: Colors.indigo,
+                  onClick: () {
+                    setState(() {
+                      isTravelVisible = !isTravelVisible;
+                    });
+                  },
+                  btnHeight: 50,
+                  borderRadius: 8,
+                  btnWidth: 80,
+                  visibility: !isTravelVisible,
+                ),
+                const SizedBox(width: 8),
+                SelectInterest(
+                  borderColor: Colors.indigo,
+                  text: 'Exportation',
+                  textColor: Colors.indigo,
+                  onClick: () {
+                    setState(() {
+                      isExportationVisible = !isExportationVisible;
+                    });
+                  },
+                  btnHeight: 50,
+                  borderRadius: 8,
+                  btnWidth: 160,
+                  visibility: !isExportationVisible,
+                ),
+              ],
+            ),
             const Spacer(),
             SizedBox(
               height: 50,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   onPrimary: Colors.black87,
-                  primary: Color.fromARGB(255, 94, 94, 214),
-                  //minimumSize: Size(btnWidth, 50),
+                  primary: Colors.indigoAccent,
                   padding:
                       const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(4)),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: isSelected <= 3 && isSelected >= 7 ? null : () {},
                 child: Center(
                   child: Text(
                     'Next',
