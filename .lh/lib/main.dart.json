@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 7,
+            "activePatchIndex": 17,
             "patches": [
                 {
                     "date": 1654131519541,
@@ -36,6 +36,46 @@
                 {
                     "date": 1654135676289,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n   Widget build(BuildContext context) {\n     return MaterialApp(\n       title: 'Flutter Demo',\n       theme: ThemeData(\n-        primarySwatch: Colors.blue,\n+        primarySwatch: Colors.grey,\n       ),\n       home: const MyHomePage(title: 'Interest App'),\n     );\n   }\n"
+                },
+                {
+                    "date": 1654164667841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n   // This widget is the root of your application.\n   @override\n   Widget build(BuildContext context) {\n     return MaterialApp(\n+      debugShowCheckedModeBanner: false,\n       title: 'Flutter Demo',\n       theme: ThemeData(\n         primarySwatch: Colors.grey,\n       ),\n"
+                },
+                {
+                    "date": 1654177909343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     return MaterialApp(\n       debugShowCheckedModeBanner: false,\n       title: 'Flutter Demo',\n       theme: ThemeData(\n-        primarySwatch: Colors.grey,\n+        primaryColor: const Color.fromARGB(255, 78, 78, 243),\n       ),\n       home: const MyHomePage(title: 'Interest App'),\n     );\n   }\n"
+                },
+                {
+                    "date": 1654178005152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     return MaterialApp(\n       debugShowCheckedModeBanner: false,\n       title: 'Flutter Demo',\n       theme: ThemeData(\n-        primaryColor: const Color.fromARGB(255, 78, 78, 243),\n+        primaryColor: Color.fromARGB(255, 107, 72, 233),\n       ),\n       home: const MyHomePage(title: 'Interest App'),\n     );\n   }\n"
+                },
+                {
+                    "date": 1654178010534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     return MaterialApp(\n       debugShowCheckedModeBanner: false,\n       title: 'Flutter Demo',\n       theme: ThemeData(\n-        primaryColor: Color.fromARGB(255, 107, 72, 233),\n+        primaryColor: const Color.fromARGB(255, 107, 72, 233),\n       ),\n       home: const MyHomePage(title: 'Interest App'),\n     );\n   }\n"
+                },
+                {
+                    "date": 1654178060820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,14 +11,15 @@\n \n   // This widget is the root of your application.\n   @override\n   Widget build(BuildContext context) {\n-    return MaterialApp(\n+    return const MaterialApp(\n+      color: Color.fromARGB(255, 107, 72, 233),\n       debugShowCheckedModeBanner: false,\n       title: 'Flutter Demo',\n-      theme: ThemeData(\n-        primaryColor: const Color.fromARGB(255, 107, 72, 233),\n-      ),\n-      home: const MyHomePage(title: 'Interest App'),\n+      // theme: ThemeData(\n+      //   primaryColor: const Color.fromARGB(255, 107, 72, 233),\n+      // ),\n+      home: MyHomePage(title: 'Interest App'),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1654178378826,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,15 +11,13 @@\n \n   // This widget is the root of your application.\n   @override\n   Widget build(BuildContext context) {\n-    return const MaterialApp(\n-      color: Color.fromARGB(255, 107, 72, 233),\n+    return MaterialApp(\n+      //color: Color.fromARGB(255, 107, 72, 233),\n       debugShowCheckedModeBanner: false,\n       title: 'Flutter Demo',\n-      // theme: ThemeData(\n-      //   primaryColor: const Color.fromARGB(255, 107, 72, 233),\n-      // ),\n+      theme: ThemeData(primarySwatch: Colors.indigo),\n       home: MyHomePage(title: 'Interest App'),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1654178412144,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     return MaterialApp(\n       //color: Color.fromARGB(255, 107, 72, 233),\n       debugShowCheckedModeBanner: false,\n       title: 'Flutter Demo',\n-      theme: ThemeData(primarySwatch: Colors.indigo),\n+      theme: ThemeData(primaryColor: Colors.indigoAccent),\n       home: MyHomePage(title: 'Interest App'),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1654178426581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     return MaterialApp(\n       //color: Color.fromARGB(255, 107, 72, 233),\n       debugShowCheckedModeBanner: false,\n       title: 'Flutter Demo',\n-      theme: ThemeData(primaryColor: Colors.indigoAccent),\n+      theme: ThemeData(primarySwatch: Colors.indigo),\n       home: MyHomePage(title: 'Interest App'),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1654178439644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,13 +8,11 @@\n \n class MyApp extends StatelessWidget {\n   const MyApp({Key? key}) : super(key: key);\n \n-  // This widget is the root of your application.\n   @override\n   Widget build(BuildContext context) {\n     return MaterialApp(\n-      //color: Color.fromARGB(255, 107, 72, 233),\n       debugShowCheckedModeBanner: false,\n       title: 'Flutter Demo',\n       theme: ThemeData(primarySwatch: Colors.indigo),\n       home: MyHomePage(title: 'Interest App'),\n"
+                },
+                {
+                    "date": 1654179951686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,8 @@\n     return MaterialApp(\n       debugShowCheckedModeBanner: false,\n       title: 'Flutter Demo',\n       theme: ThemeData(primarySwatch: Colors.indigo),\n-      home: MyHomePage(title: 'Interest App'),\n+      home: const MyHomePage(title: 'Interest App'),\n     );\n   }\n }\n"
                 }
             ],
             "date": 1654131519541,

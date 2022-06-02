@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 14,
             "patches": [
                 {
                     "date": 1654137039113,
@@ -12,6 +12,58 @@
                 {
                     "date": 1654137485210,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,24 +4,24 @@\n class SelectInterest extends StatelessWidget {\n   final String text;\n   final Function onClick;\n   final double btnHeight;\n-  //double btnWidth;\n+  double? btnWidth;\n   final double borderRadius;\n \n-  SelectInterest({\n-    Key? key,\n-    required this.text,\n-    required this.onClick,\n-    required this.btnHeight,\n-    required this.borderRadius,\n-    //this.btnWidth = MediaQuery.of(context).size.,\n-  }) : super(key: key);\n+  SelectInterest(\n+      {Key? key,\n+      required this.text,\n+      required this.onClick,\n+      required this.btnHeight,\n+      required this.borderRadius,\n+      this.btnWidth})\n+      : super(key: key);\n \n   @override\n   Widget build(BuildContext context) {\n     return Container(\n-      //width: btnWidth,\n+      width: btnWidth,\n       height: btnHeight,\n       child: OutlinedButton(\n         style: OutlinedButton.styleFrom(\n           primary: Colors.black87,\n"
+                },
+                {
+                    "date": 1654170320236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,8 @@\n       height: btnHeight,\n       child: OutlinedButton(\n         style: OutlinedButton.styleFrom(\n           primary: Colors.black87,\n-          // minimumSize: const Size(double.maxFinite, 52),\n           padding: const EdgeInsets.symmetric(horizontal: 16),\n           shape: RoundedRectangleBorder(\n             borderRadius: BorderRadius.all(Radius.circular(borderRadius)),\n           ),\n"
+                },
+                {
+                    "date": 1654170379444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,16 +6,18 @@\n   final Function onClick;\n   final double btnHeight;\n   double? btnWidth;\n   final double borderRadius;\n+  final Visibility visibility;\n \n   SelectInterest(\n       {Key? key,\n       required this.text,\n       required this.onClick,\n       required this.btnHeight,\n       required this.borderRadius,\n-      this.btnWidth})\n+      this.btnWidth,\n+      required this.visibility})\n       : super(key: key);\n \n   @override\n   Widget build(BuildContext context) {\n"
+                },
+                {
+                    "date": 1654170394781,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n       : super(key: key);\n \n   @override\n   Widget build(BuildContext context) {\n-    return Container(\n+    return SizedBox(\n       width: btnWidth,\n       height: btnHeight,\n       child: OutlinedButton(\n         style: OutlinedButton.styleFrom(\n"
+                },
+                {
+                    "date": 1654170556063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   final Function onClick;\n   final double btnHeight;\n   double? btnWidth;\n   final double borderRadius;\n-  final Visibility visibility;\n+  final bool visibility;\n \n   SelectInterest(\n       {Key? key,\n       required this.text,\n@@ -20,29 +20,32 @@\n       : super(key: key);\n \n   @override\n   Widget build(BuildContext context) {\n-    return SizedBox(\n-      width: btnWidth,\n-      height: btnHeight,\n-      child: OutlinedButton(\n-        style: OutlinedButton.styleFrom(\n-          primary: Colors.black87,\n-          padding: const EdgeInsets.symmetric(horizontal: 16),\n-          shape: RoundedRectangleBorder(\n-            borderRadius: BorderRadius.all(Radius.circular(borderRadius)),\n+    return Visibility(\n+      visible: visibility,\n+      child: SizedBox(\n+        width: btnWidth,\n+        height: btnHeight,\n+        child: OutlinedButton(\n+          style: OutlinedButton.styleFrom(\n+            primary: Colors.black87,\n+            padding: const EdgeInsets.symmetric(horizontal: 16),\n+            shape: RoundedRectangleBorder(\n+              borderRadius: BorderRadius.all(Radius.circular(borderRadius)),\n+            ),\n           ),\n-        ),\n-        onPressed: () {\n-          return onClick();\n-        },\n-        child: Text(\n-          text,\n-          style: GoogleFonts.nunitoSans(\n-            color: Colors.black,\n-            fontSize: 14.0,\n-            fontWeight: FontWeight.w700,\n-            fontStyle: FontStyle.normal,\n+          onPressed: () {\n+            return onClick();\n+          },\n+          child: Text(\n+            text,\n+            style: GoogleFonts.nunitoSans(\n+              color: Colors.black,\n+              fontSize: 14.0,\n+              fontWeight: FontWeight.w700,\n+              fontStyle: FontStyle.normal,\n+            ),\n           ),\n         ),\n       ),\n     );\n"
+                },
+                {
+                    "date": 1654177797442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,16 +7,18 @@\n   final double btnHeight;\n   double? btnWidth;\n   final double borderRadius;\n   final bool visibility;\n+  Color? color;\n \n   SelectInterest(\n       {Key? key,\n       required this.text,\n       required this.onClick,\n       required this.btnHeight,\n       required this.borderRadius,\n       this.btnWidth,\n+      this.color,\n       required this.visibility})\n       : super(key: key);\n \n   @override\n"
+                },
+                {
+                    "date": 1654178620358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n       required this.onClick,\n       required this.btnHeight,\n       required this.borderRadius,\n       this.btnWidth,\n-      this.color,\n+      this.color = Colors.black,\n       required this.visibility})\n       : super(key: key);\n \n   @override\n@@ -41,9 +41,9 @@\n           },\n           child: Text(\n             text,\n             style: GoogleFonts.nunitoSans(\n-              color: Colors.black,\n+              color: color,\n               fontSize: 14.0,\n               fontWeight: FontWeight.w700,\n               fontStyle: FontStyle.normal,\n             ),\n"
+                },
+                {
+                    "date": 1654178757838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,18 +7,18 @@\n   final double btnHeight;\n   double? btnWidth;\n   final double borderRadius;\n   final bool visibility;\n-  Color? color;\n+  Color? textColor;\n \n   SelectInterest(\n       {Key? key,\n       required this.text,\n       required this.onClick,\n       required this.btnHeight,\n       required this.borderRadius,\n       this.btnWidth,\n-      this.color = Colors.black,\n+      this.textColor = Colors.black,\n       required this.visibility})\n       : super(key: key);\n \n   @override\n@@ -29,9 +29,9 @@\n         width: btnWidth,\n         height: btnHeight,\n         child: OutlinedButton(\n           style: OutlinedButton.styleFrom(\n-            primary: Colors.black87,\n+            primary: Colors.red,\n             padding: const EdgeInsets.symmetric(horizontal: 16),\n             shape: RoundedRectangleBorder(\n               borderRadius: BorderRadius.all(Radius.circular(borderRadius)),\n             ),\n@@ -41,9 +41,9 @@\n           },\n           child: Text(\n             text,\n             style: GoogleFonts.nunitoSans(\n-              color: color,\n+              color: textColor,\n               fontSize: 14.0,\n               fontWeight: FontWeight.w700,\n               fontStyle: FontStyle.normal,\n             ),\n"
+                },
+                {
+                    "date": 1654178879723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,9 @@\n       child: SizedBox(\n         width: btnWidth,\n         height: btnHeight,\n         child: OutlinedButton(\n+          autofocus: true,\n           style: OutlinedButton.styleFrom(\n             primary: Colors.red,\n             padding: const EdgeInsets.symmetric(horizontal: 16),\n             shape: RoundedRectangleBorder(\n"
+                },
+                {
+                    "date": 1654178909314,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,11 +28,10 @@\n       child: SizedBox(\n         width: btnWidth,\n         height: btnHeight,\n         child: OutlinedButton(\n-          autofocus: true,\n           style: OutlinedButton.styleFrom(\n-            primary: Colors.red,\n+            primary: Colors.black87,\n             padding: const EdgeInsets.symmetric(horizontal: 16),\n             shape: RoundedRectangleBorder(\n               borderRadius: BorderRadius.all(Radius.circular(borderRadius)),\n             ),\n"
+                },
+                {
+                    "date": 1654179386472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,9 @@\n         width: btnWidth,\n         height: btnHeight,\n         child: OutlinedButton(\n           style: OutlinedButton.styleFrom(\n+            side: BorderSide(color: Colors.indigo),\n             primary: Colors.black87,\n             padding: const EdgeInsets.symmetric(horizontal: 16),\n             shape: RoundedRectangleBorder(\n               borderRadius: BorderRadius.all(Radius.circular(borderRadius)),\n"
+                },
+                {
+                    "date": 1654179441870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n   double? btnWidth;\n   final double borderRadius;\n   final bool visibility;\n   Color? textColor;\n+  Color? borderColor = null;\n \n   SelectInterest(\n       {Key? key,\n       required this.text,\n"
+                },
+                {
+                    "date": 1654179456112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n   double? btnWidth;\n   final double borderRadius;\n   final bool visibility;\n   Color? textColor;\n-  Color? borderColor = null;\n+  Color? borderColor;\n \n   SelectInterest(\n       {Key? key,\n       required this.text,\n"
+                },
+                {
+                    "date": 1654179631981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,17 +8,18 @@\n   double? btnWidth;\n   final double borderRadius;\n   final bool visibility;\n   Color? textColor;\n-  Color? borderColor;\n+  Color borderColor;\n \n   SelectInterest(\n       {Key? key,\n       required this.text,\n       required this.onClick,\n       required this.btnHeight,\n       required this.borderRadius,\n       this.btnWidth,\n+      this.borderColor = Colors.grey,\n       this.textColor = Colors.black,\n       required this.visibility})\n       : super(key: key);\n \n@@ -30,9 +31,9 @@\n         width: btnWidth,\n         height: btnHeight,\n         child: OutlinedButton(\n           style: OutlinedButton.styleFrom(\n-            side: BorderSide(color: Colors.indigo),\n+            side: BorderSide(color: borderColor),\n             primary: Colors.black87,\n             padding: const EdgeInsets.symmetric(horizontal: 16),\n             shape: RoundedRectangleBorder(\n               borderRadius: BorderRadius.all(Radius.circular(borderRadius)),\n"
                 }
             ],
             "date": 1654137039113,
