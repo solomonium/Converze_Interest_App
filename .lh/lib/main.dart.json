@@ -1,0 +1,46 @@
+{
+    "sourceFile": "lib/main.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1654131519541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1654131544915,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,23 +31,13 @@\n \n class _MyHomePageState extends State<MyHomePage> {\n   @override\n   Widget build(BuildContext context) {\n-    // This method is rerun every time setState is called, for instance as done\n-    // by the _incrementCounter method above.\n-    //\n-    // The Flutter framework has been optimized to make rerunning build methods\n-    // fast, so that you can just rebuild anything that needs updating rather\n-    // than having to individually change instances of widgets.\n     return Scaffold(\n       appBar: AppBar(\n-        // Here we take the value from the MyHomePage object that was created by\n-        // the App.build method, and use it to set our appbar title.\n         title: Text(widget.title),\n       ),\n       body: Center(\n-        // Center is a layout widget. It takes a single child and positions it\n-        // in the middle of the parent.\n         child: Column(),\n       ),\n     );\n   }\n"
+                },
+                {
+                    "date": 1654131599521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,11 @@\n       appBar: AppBar(\n         title: Text(widget.title),\n       ),\n       body: Center(\n-        child: Column(),\n+        child: Column(\n+          children: const [Text('Interest App')],\n+        ),\n       ),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1654131622578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,8 +37,9 @@\n         title: Text(widget.title),\n       ),\n       body: Center(\n         child: Column(\n+          mainAxisAlignment: MainAxisAlignment.center,\n           children: const [Text('Interest App')],\n         ),\n       ),\n     );\n"
+                },
+                {
+                    "date": 1654132087176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/material.dart';\n+import 'package:interest_app/home_screen.dart';\n \n void main() {\n   runApp(const MyApp());\n }\n@@ -18,30 +19,4 @@\n       home: const MyHomePage(title: 'Flutter Demo Home Page'),\n     );\n   }\n }\n-\n-class MyHomePage extends StatefulWidget {\n-  const MyHomePage({Key? key, required this.title}) : super(key: key);\n-\n-  final String title;\n-\n-  @override\n-  State<MyHomePage> createState() => _MyHomePageState();\n-}\n-\n-class _MyHomePageState extends State<MyHomePage> {\n-  @override\n-  Widget build(BuildContext context) {\n-    return Scaffold(\n-      appBar: AppBar(\n-        title: Text(widget.title),\n-      ),\n-      body: Center(\n-        child: Column(\n-          mainAxisAlignment: MainAxisAlignment.center,\n-          children: const [Text('Interest App')],\n-        ),\n-      ),\n-    );\n-  }\n-}\n"
+                },
+                {
+                    "date": 1654133648598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n+import 'package:interest_app/home_screen.dart';\n import 'package:flutter/material.dart';\n-import 'package:interest_app/home_screen.dart';\n+import 'package:flutter/cupertino.dart';\n \n void main() {\n   runApp(const MyApp());\n }\n"
+                },
+                {
+                    "date": 1654134092148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,8 @@\n       title: 'Flutter Demo',\n       theme: ThemeData(\n         primarySwatch: Colors.blue,\n       ),\n-      home: const MyHomePage(title: 'Flutter Demo Home Page'),\n+      home: const MyHomePage(title: 'Interest App'),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1654135676289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n   Widget build(BuildContext context) {\n     return MaterialApp(\n       title: 'Flutter Demo',\n       theme: ThemeData(\n-        primarySwatch: Colors.blue,\n+        primarySwatch: Colors.grey,\n       ),\n       home: const MyHomePage(title: 'Interest App'),\n     );\n   }\n"
+                }
+            ],
+            "date": 1654131519541,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\n\nvoid main() {\n  runApp(const MyApp());\n}\n\nclass MyApp extends StatelessWidget {\n  const MyApp({Key? key}) : super(key: key);\n\n  // This widget is the root of your application.\n  @override\n  Widget build(BuildContext context) {\n    return MaterialApp(\n      title: 'Flutter Demo',\n      theme: ThemeData(\n        primarySwatch: Colors.blue,\n      ),\n      home: const MyHomePage(title: 'Flutter Demo Home Page'),\n    );\n  }\n}\n\nclass MyHomePage extends StatefulWidget {\n  const MyHomePage({Key? key, required this.title}) : super(key: key);\n\n  final String title;\n\n  @override\n  State<MyHomePage> createState() => _MyHomePageState();\n}\n\nclass _MyHomePageState extends State<MyHomePage> {\n  @override\n  Widget build(BuildContext context) {\n    // This method is rerun every time setState is called, for instance as done\n    // by the _incrementCounter method above.\n    //\n    // The Flutter framework has been optimized to make rerunning build methods\n    // fast, so that you can just rebuild anything that needs updating rather\n    // than having to individually change instances of widgets.\n    return Scaffold(\n      appBar: AppBar(\n        // Here we take the value from the MyHomePage object that was created by\n        // the App.build method, and use it to set our appbar title.\n        title: Text(widget.title),\n      ),\n      body: Center(\n        // Center is a layout widget. It takes a single child and positions it\n        // in the middle of the parent.\n        child: Column(),\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}

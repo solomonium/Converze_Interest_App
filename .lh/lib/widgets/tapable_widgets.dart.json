@@ -1,0 +1,22 @@
+{
+    "sourceFile": "lib/widgets/tapable_widgets.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1654137039113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1654137485210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,24 +4,24 @@\n class SelectInterest extends StatelessWidget {\n   final String text;\n   final Function onClick;\n   final double btnHeight;\n-  //double btnWidth;\n+  double? btnWidth;\n   final double borderRadius;\n \n-  SelectInterest({\n-    Key? key,\n-    required this.text,\n-    required this.onClick,\n-    required this.btnHeight,\n-    required this.borderRadius,\n-    //this.btnWidth = MediaQuery.of(context).size.,\n-  }) : super(key: key);\n+  SelectInterest(\n+      {Key? key,\n+      required this.text,\n+      required this.onClick,\n+      required this.btnHeight,\n+      required this.borderRadius,\n+      this.btnWidth})\n+      : super(key: key);\n \n   @override\n   Widget build(BuildContext context) {\n     return Container(\n-      //width: btnWidth,\n+      width: btnWidth,\n       height: btnHeight,\n       child: OutlinedButton(\n         style: OutlinedButton.styleFrom(\n           primary: Colors.black87,\n"
+                }
+            ],
+            "date": 1654137039113,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:google_fonts/google_fonts.dart';\n\nclass SelectInterest extends StatelessWidget {\n  final String text;\n  final Function onClick;\n  final double btnHeight;\n  //double btnWidth;\n  final double borderRadius;\n\n  SelectInterest({\n    Key? key,\n    required this.text,\n    required this.onClick,\n    required this.btnHeight,\n    required this.borderRadius,\n    //this.btnWidth = MediaQuery.of(context).size.,\n  }) : super(key: key);\n\n  @override\n  Widget build(BuildContext context) {\n    return Container(\n      //width: btnWidth,\n      height: btnHeight,\n      child: OutlinedButton(\n        style: OutlinedButton.styleFrom(\n          primary: Colors.black87,\n          // minimumSize: const Size(double.maxFinite, 52),\n          padding: const EdgeInsets.symmetric(horizontal: 16),\n          shape: RoundedRectangleBorder(\n            borderRadius: BorderRadius.all(Radius.circular(borderRadius)),\n          ),\n        ),\n        onPressed: () {\n          return onClick();\n        },\n        child: Text(\n          text,\n          style: GoogleFonts.nunitoSans(\n            color: Colors.black,\n            fontSize: 14.0,\n            fontWeight: FontWeight.w700,\n            fontStyle: FontStyle.normal,\n          ),\n        ),\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}

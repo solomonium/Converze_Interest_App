@@ -1,0 +1,30 @@
+{
+    "sourceFile": "lib/tapable_widgets.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1654132331162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1654132493172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,9 @@\n   const SelectInterest({Key? key}) : super(key: key);\n \n   @override\n   Widget build(BuildContext context) {\n-    return Container();\n+    return Container(\n+      child: ElevatedButton(onPressed: () {}, child: const Text('test')),\n+    );\n   }\n }\n"
+                },
+                {
+                    "date": 1654132509402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,7 @@\n   const SelectInterest({Key? key}) : super(key: key);\n \n   @override\n   Widget build(BuildContext context) {\n-    return Container(\n-      child: ElevatedButton(onPressed: () {}, child: const Text('test')),\n-    );\n+    return ElevatedButton(onPressed: () {}, child: const Text('test'));\n   }\n }\n"
+                },
+                {
+                    "date": 1654132926101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,49 @@\n import 'package:flutter/material.dart';\n+import 'package:google_fonts/google_fonts.dart';\n \n class SelectInterest extends StatelessWidget {\n-  const SelectInterest({Key? key}) : super(key: key);\n+  final String text;\n+  final Function onClick;\n+  final double btnHeight;\n+  final double btnWidth;\n+  final double borderRadius;\n \n+  const SelectInterest({\n+    Key? key,\n+    required this.text,\n+    required this.onClick,\n+    required this.btnHeight,\n+    required this.borderRadius,\n+    required this.btnWidth,\n+  }) : super(key: key);\n+\n   @override\n   Widget build(BuildContext context) {\n-    return ElevatedButton(onPressed: () {}, child: const Text('test'));\n+    return Container(\n+      width: btnWidth,\n+      height: btnHeight,\n+      child: OutlinedButton(\n+        style: OutlinedButton.styleFrom(\n+          primary: Colors.black87,\n+          // minimumSize: const Size(double.maxFinite, 52),\n+          padding: const EdgeInsets.symmetric(horizontal: 16),\n+          shape: RoundedRectangleBorder(\n+            borderRadius: BorderRadius.all(Radius.circular(borderRadius)),\n+          ),\n+        ),\n+        onPressed: () {\n+          return onClick();\n+        },\n+        child: Text(\n+          text,\n+          style: GoogleFonts.nunitoSans(\n+            color: Colors.black,\n+            fontSize: 14.0,\n+            fontWeight: FontWeight.w700,\n+            fontStyle: FontStyle.normal,\n+          ),\n+        ),\n+      ),\n+    );\n   }\n }\n"
+                }
+            ],
+            "date": 1654132331162,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\n\nclass SelectInterest extends StatelessWidget {\n  const SelectInterest({Key? key}) : super(key: key);\n\n  @override\n  Widget build(BuildContext context) {\n    return Container();\n  }\n}\n"
+        }
+    ]
+}

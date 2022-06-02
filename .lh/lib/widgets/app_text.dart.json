@@ -1,0 +1,30 @@
+{
+    "sourceFile": "lib/widgets/app_text.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1654133093626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1654133166893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,25 +4,22 @@\n class AppLargeText extends StatelessWidget {\n   double size;\n   final String text;\n   final Color? color;\n-  final TextAlign? textAlign;\n   TextTheme? textTheme;\n \n   AppLargeText(\n       {Key? key,\n       this.size = 20,\n       required this.text,\n-      this.textAlign = TextAlign.left,\n       this.textTheme,\n       this.color})\n       : super(key: key);\n \n   @override\n   Widget build(BuildContext context) {\n     return Text(\n       text,\n-      textAlign: textAlign,\n       style: GoogleFonts.nunitoSans(\n         color: color,\n         fontSize: size,\n         fontWeight: FontWeight.bold,\n"
+                },
+                {
+                    "date": 1654133346608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,16 @@\n import 'package:flutter/material.dart';\n import 'package:google_fonts/google_fonts.dart';\n \n class AppLargeText extends StatelessWidget {\n-  double size;\n+  final double size;\n   final String text;\n   final Color? color;\n   TextTheme? textTheme;\n \n   AppLargeText(\n       {Key? key,\n-      this.size = 20,\n+      required this.size,\n       required this.text,\n       this.textTheme,\n       this.color})\n       : super(key: key);\n"
+                },
+                {
+                    "date": 1654134497991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,20 @@\n import 'package:flutter/material.dart';\n import 'package:google_fonts/google_fonts.dart';\n \n-class AppLargeText extends StatelessWidget {\n-  final double size;\n+class AppText extends StatelessWidget {\n+  double size;\n+  FontWeight? fontWeight;\n   final String text;\n   final Color? color;\n+  final TextAlign? textAlign;\n   TextTheme? textTheme;\n \n-  AppLargeText(\n+  AppText(\n       {Key? key,\n-      required this.size,\n+      this.size = 16,\n+      this.fontWeight,\n+      this.textAlign = TextAlign.left,\n       required this.text,\n       this.textTheme,\n       this.color})\n       : super(key: key);\n@@ -18,12 +22,13 @@\n   @override\n   Widget build(BuildContext context) {\n     return Text(\n       text,\n+      textAlign: textAlign,\n       style: GoogleFonts.nunitoSans(\n         color: color,\n         fontSize: size,\n-        fontWeight: FontWeight.bold,\n+        fontWeight: fontWeight,\n         textStyle: Theme.of(context).textTheme.bodyText1,\n       ),\n     );\n   }\n"
+                }
+            ],
+            "date": 1654133093626,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:google_fonts/google_fonts.dart';\n\nclass AppLargeText extends StatelessWidget {\n  double size;\n  final String text;\n  final Color? color;\n  final TextAlign? textAlign;\n  TextTheme? textTheme;\n\n  AppLargeText(\n      {Key? key,\n      this.size = 20,\n      required this.text,\n      this.textAlign = TextAlign.left,\n      this.textTheme,\n      this.color})\n      : super(key: key);\n\n  @override\n  Widget build(BuildContext context) {\n    return Text(\n      text,\n      textAlign: textAlign,\n      style: GoogleFonts.nunitoSans(\n        color: color,\n        fontSize: size,\n        fontWeight: FontWeight.bold,\n        textStyle: Theme.of(context).textTheme.bodyText1,\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}
