@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 17,
+            "activePatchIndex": 18,
             "patches": [
                 {
                     "date": 1654131519541,
@@ -76,6 +76,10 @@
                 {
                     "date": 1654179951686,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,8 @@\n     return MaterialApp(\n       debugShowCheckedModeBanner: false,\n       title: 'Flutter Demo',\n       theme: ThemeData(primarySwatch: Colors.indigo),\n-      home: MyHomePage(title: 'Interest App'),\n+      home: const MyHomePage(title: 'Interest App'),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1654200651508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n import 'package:interest_app/home_screen.dart';\n import 'package:flutter/material.dart';\n-import 'package:flutter/cupertino.dart';\n \n void main() {\n   runApp(const MyApp());\n }\n"
                 }
             ],
             "date": 1654131519541,

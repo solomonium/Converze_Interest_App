@@ -1,6 +1,5 @@
 import 'package:interest_app/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 
 void main() {
   runApp(const MyApp());
