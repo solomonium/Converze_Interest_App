@@ -1,0 +1,22 @@
+{
+    "sourceFile": "lib/widgets/interest.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1654263644630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1654263849863,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,18 @@\n {\n-    \"Intrest0\": \"football\",\n-    \"Intrest2\": \"football\",\n-    \"Intrest3\": \"football\",\n-    \"Intrest4\": \"football\",\n-    \"Intrest5\": \"football\",\n-    \"Intrest6\": \"football\",\n-    \"Intrest7\": \"football\",\n-    \"Intrest8\": \"football\",\n-    \"Intrest9\": \"football\",\n-    \"Intrest10\": \"football\",\n-    \"Intrest11\": \"football\",\n-    \"Intrest12\": \"football\",\n-    \"Intrest13\": \"football\",\n-    \"Intrest14\": \"football\",\n-    \"Intrest15\": \"football\"\n+    \"Intrest0\": \"Football\",\n+    \"Intrest2\": \"Music\",\n+    \"Intrest3\": \"Medicine\",\n+    \"Intrest4\": \"Agriculture\",\n+    \"Intrest5\": \"Sports\",\n+    \"Intrest6\": \"Breakfast\",\n+    \"Intrest7\": \"Sleep\",\n+    \"Intrest8\": \"Travel\",\n+    \"Intrest9\": \"Exportation\",\n+    \"Intrest10\": \"Eating\",\n+    \"Intrest11\": \"Singing\",\n+    \"Intrest12\": \"Gyming\",\n+    \"Intrest13\": \"Reading\",\n+    \"Intrest14\": \"Coding\",\n+    \"Intrest15\": \"Meditating\"\n    \n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1654263644630,
+            "name": "Commit-0",
+            "content": "{\n    \"Intrest0\": \"football\",\n    \"Intrest2\": \"football\",\n    \"Intrest3\": \"football\",\n    \"Intrest4\": \"football\",\n    \"Intrest5\": \"football\",\n    \"Intrest6\": \"football\",\n    \"Intrest7\": \"football\",\n    \"Intrest8\": \"football\",\n    \"Intrest9\": \"football\",\n    \"Intrest10\": \"football\",\n    \"Intrest11\": \"football\",\n    \"Intrest12\": \"football\",\n    \"Intrest13\": \"football\",\n    \"Intrest14\": \"football\",\n    \"Intrest15\": \"football\"\n   \n}"
+        }
+    ]
+}
