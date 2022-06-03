@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1654184494602,
@@ -16,6 +16,14 @@
                 {
                     "date": 1654189009116,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,18 +5,11 @@\n ## Getting Started\n \n This project is a starting point for a Flutter application.\n \n-A few resources to get you started if this is your first Flutter project:\n-\n-<!-- - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)\n-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)\n-\n-For help getting started with Flutter, view our\n-[online documentation](https://flutter.dev/docs), which offers tutorials,\n-samples, guidance on mobile development, and a full API reference. -->\n-\n This is a project that allows a user to select a minimum of 3 interests and maximum of 7 from a curated list of interests with the following goals:\n \n The user selected interests appear in the selected section shown at the bottom side of the UI screen and disappear in the remaining list of interests.\n \n The user is able to use the search box to quickly find an interest from a large pool of interests.\n+\n+The next button is only active when the user has selected a minimum of 3 interests and disabled after the user has selected a maximum of 7 interests from the list.\n"
+                },
+                {
+                    "date": 1654293279223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,4 +12,14 @@\n \n The user is able to use the search box to quickly find an interest from a large pool of interests.\n \n The next button is only active when the user has selected a minimum of 3 interests and disabled after the user has selected a maximum of 7 interests from the list.\n+\n+I will love to improve the apps later in the future by making sure that user are able to input their interest that are listed in the app so it gives room for flexibilty and opinions.\n+\n+The exercise is a wonderful one as it makes me learn some little things i might not have come across later as a flutter developer\n+\n+How to run the App\n+\n+Attached is the apk build file which can be installed on the real device to test its performance and also the source code can also be run on any IDE of your choice (Used IDE: VSCODE). Make sure to download packages and run on either android emulator or ios simulator (The app was built and tested okay on both platforms)\n+\n+Thanks\n"
+                },
+                {
+                    "date": 1654293339165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,7 @@\n The exercise is a wonderful one as it makes me learn some little things i might not have come across later as a flutter developer\n \n How to run the App\n \n-Attached is the apk build file which can be installed on the real device to test its performance and also the source code can also be run on any IDE of your choice (Used IDE: VSCODE). Make sure to download packages and run on either android emulator or ios simulator (The app was built and tested okay on both platforms)\n+Attached is the apk build file which can be installed on the real device to test its performance and also the source code can also be raxn on any IDE of your choice (Used IDE: VSCODE). Make sure to download packages and run on either android emulator or ios simulator (The app was built and tested okay on both platforms)\n \n Thanks\n"
                 }
             ],
             "date": 1654184494602,
